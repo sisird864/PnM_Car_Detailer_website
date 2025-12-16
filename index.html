@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>P&M Car & Detail Supplie - Professional Auto Detailing in Ridgecrest, CA</title>
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- FontAwesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+
+        /* Custom Color Palette */
+        :root {
+            --deep-blue: #1E3A8A;
+            --dark-navy: #0F172A;
+            --vibrant-red: #DC2626;
+            --shine-silver: #E5E7EB;
+            --electric-blue: #3B82F6;
+        }
+
+        .bg-deep-blue {
+            background-color: var(--deep-blue);
+        }
+
+        .bg-dark-navy {
+            background-color: var(--dark-navy);
+        }
+
+        .bg-vibrant-red {
+            background-color: var(--vibrant-red);
+        }
+
+        .text-deep-blue {
+            color: var(--deep-blue);
+        }
+
+        .text-vibrant-red {
+            color: var(--vibrant-red);
+        }
+
+        .border-vibrant-red {
+            border-color: var(--vibrant-red);
+        }
+
+        .hover\:bg-vibrant-red-dark:hover {
+            background-color: #B91C1C;
+        }
+
+        .hero-bg {
+            background: linear-gradient(rgba(15, 23, 42, 0.75), rgba(30, 58, 138, 0.65)),
+                        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800"><rect fill="%230F172A" width="1200" height="800"/><text x="50%25" y="50%25" font-size="24" fill="%23ffffff22" text-anchor="middle" dy=".3em">Hero Image: Shiny Detailed Car</text></svg>');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+
+        .sticky-header {
+            position: sticky;
+            top: 0;
+            z-index: 50;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .pulse-ring {
+            animation: pulse-ring 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+        }
+
+        @keyframes pulse-ring {
+            0%, 100% {
+                opacity: 1;
+            }
+            50% {
+                opacity: 0.5;
+            }
+        }
+
+        .card-hover {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+        }
+
+        .star-rating {
+            color: #FFD700;
+        }
+
+        /* Smooth Scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Navigation Buttons Styling */
+        .nav-buttons {
+            background: linear-gradient(135deg, var(--deep-blue), var(--dark-navy));
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .nav-btn {
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .nav-btn:hover {
+            transform: translateY(-2px);
+            background-color: var(--vibrant-red);
+        }
+
+        .nav-btn::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            height: 2px;
+            background-color: var(--vibrant-red);
+            transition: width 0.3s ease;
+        }
+
+        .nav-btn:hover::after {
+            width: 80%;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+
+    <!-- Sticky Mobile Header -->
+    <header class="sticky-header bg-dark-navy text-white">
+        <div class="container mx-auto px-4 py-3 flex items-center justify-between relative">
+            <!-- Left: Business Name -->
+            <div class="flex items-center space-x-2">
+                <i class="fas fa-car text-vibrant-red text-2xl"></i>
+                <span class="font-bold text-lg md:text-xl">P&M Car & Detail Supplie</span>
+            </div>
+
+            <!-- Center: Navigation Buttons (Hidden on small screens, absolutely positioned to center) -->
+            <nav class="hidden lg:flex items-center space-x-3 absolute left-1/2 transform -translate-x-1/2">
+                <a href="#home" class="nav-btn bg-deep-blue text-white px-5 py-2.5 rounded-lg font-bold text-base hover:bg-vibrant-red transition-all shadow-md">
+                    Home
+                </a>
+                <a href="#services" class="nav-btn bg-deep-blue text-white px-5 py-2.5 rounded-lg font-bold text-base hover:bg-vibrant-red transition-all shadow-md">
+                    Services
+                </a>
+                <a href="#why-choose-us" class="nav-btn bg-deep-blue text-white px-5 py-2.5 rounded-lg font-bold text-base hover:bg-vibrant-red transition-all shadow-md">
+                    Why Us
+                </a>
+                <a href="#testimonials" class="nav-btn bg-deep-blue text-white px-5 py-2.5 rounded-lg font-bold text-base hover:bg-vibrant-red transition-all shadow-md">
+                    Reviews
+                </a>
+                <a href="#contact" class="nav-btn bg-deep-blue text-white px-5 py-2.5 rounded-lg font-bold text-base hover:bg-vibrant-red transition-all shadow-md">
+                    Contact
+                </a>
+            </nav>
+
+            <!-- Right: Call Now Button -->
+            <a href="tel:7609770020"
+               class="bg-vibrant-red text-white px-4 md:px-6 py-2 md:py-3 rounded-lg font-bold text-sm md:text-base hover:bg-vibrant-red-dark transition-all pulse-ring flex items-center space-x-2">
+                <i class="fas fa-phone-alt"></i>
+                <span>Call Now</span>
+            </a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-bg text-white py-20 md:py-32">
+        <div class="container mx-auto px-4 text-center">
+            <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold mb-4 leading-tight">
+                Professional Auto Detailing & Car Care in <span class="text-vibrant-red">Ridgecrest, CA</span>
+            </h1>
+            <p class="text-xl md:text-2xl mb-8 text-gray-200 max-w-3xl mx-auto">
+                Expert detailing services that restore your vehicle's shine and protect your investment.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                <a href="tel:7609770020"
+                   class="bg-deep-blue text-white px-8 py-4 rounded-lg font-bold text-lg hover:bg-opacity-90 transition-all shadow-lg w-full sm:w-auto flex items-center justify-center space-x-2">
+                    <i class="fas fa-calendar-check"></i>
+                    <span>Book Appointment</span>
+                </a>
+                <a href="tel:7609770020"
+                   class="bg-vibrant-red text-white px-8 py-4 rounded-lg font-bold text-lg hover:bg-red-700 transition-all shadow-lg w-full sm:w-auto flex items-center justify-center space-x-2 pulse-ring">
+                    <i class="fas fa-phone-alt"></i>
+                    <span>(760) 977-0020</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trust Bar -->
+    <section class="bg-white py-8 border-b-4 border-vibrant-red">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
+                <!-- Trust Item 1 -->
+                <div class="flex flex-col items-center text-center">
+                    <div class="bg-deep-blue text-white w-16 h-16 rounded-full flex items-center justify-center mb-3">
+                        <i class="fas fa-certificate text-2xl"></i>
+                    </div>
+                    <h3 class="font-bold text-lg text-deep-blue mb-1">Professional Detailers</h3>
+                    <p class="text-gray-600 text-sm">Experienced and trained specialists</p>
+                </div>
+
+                <!-- Trust Item 2 -->
+                <div class="flex flex-col items-center text-center">
+                    <div class="bg-vibrant-red text-white w-16 h-16 rounded-full flex items-center justify-center mb-3">
+                        <i class="fas fa-spray-can text-2xl"></i>
+                    </div>
+                    <h3 class="font-bold text-lg text-deep-blue mb-1">Premium Products</h3>
+                    <p class="text-gray-600 text-sm">High-quality detailing supplies</p>
+                </div>
+
+                <!-- Trust Item 3 -->
+                <div class="flex flex-col items-center text-center">
+                    <div class="bg-deep-blue text-white w-16 h-16 rounded-full flex items-center justify-center mb-3">
+                        <i class="fas fa-check-circle text-2xl"></i>
+                    </div>
+                    <h3 class="font-bold text-lg text-deep-blue mb-1">100% Satisfaction Guarantee</h3>
+                    <p class="text-gray-600 text-sm">Quality results, every time</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Grid -->
+    <section id="services" class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-deep-blue mb-3">Our Auto Detailing Services</h2>
+                <p class="text-gray-600 text-lg max-w-2xl mx-auto">Complete car care solutions to keep your vehicle looking its best</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Service Card 1 -->
+                <div class="bg-white rounded-lg shadow-md p-6 card-hover border-t-4 border-deep-blue">
+                    <div class="text-vibrant-red text-4xl mb-4">
+                        <i class="fas fa-car-side"></i>
+                    </div>
+                    <h3 class="font-bold text-xl text-deep-blue mb-3">Auto Detailing</h3>
+                    <p class="text-gray-600">Complete interior and exterior detailing to restore your vehicle's showroom shine.</p>
+                </div>
+
+                <!-- Service Card 2 -->
+                <div class="bg-white rounded-lg shadow-md p-6 card-hover border-t-4 border-deep-blue">
+                    <div class="text-vibrant-red text-4xl mb-4">
+                        <i class="fas fa-paint-brush"></i>
+                    </div>
+                    <h3 class="font-bold text-xl text-deep-blue mb-3">Paint Restoration</h3>
+                    <p class="text-gray-600">Professional paint correction and restoration services including scratch removal.</p>
+                </div>
+
+                <!-- Service Card 3 -->
+                <div class="bg-white rounded-lg shadow-md p-6 card-hover border-t-4 border-deep-blue">
+                    <div class="text-vibrant-red text-4xl mb-4">
+                        <i class="fas fa-cog"></i>
+                    </div>
+                    <h3 class="font-bold text-xl text-deep-blue mb-3">Engine Cleaning</h3>
+                    <p class="text-gray-600">Thorough engine bay cleaning and detailing for improved performance and appearance.</p>
+                </div>
+
+                <!-- Service Card 4 -->
+                <div class="bg-white rounded-lg shadow-md p-6 card-hover border-t-4 border-deep-blue">
+                    <div class="text-vibrant-red text-4xl mb-4">
+                        <i class="fas fa-couch"></i>
+                    </div>
+                    <h3 class="font-bold text-xl text-deep-blue mb-3">Interior Detailing</h3>
+                    <p class="text-gray-600">Deep cleaning of seats, carpets, dashboard, and all interior surfaces.</p>
+                </div>
+
+                <!-- Service Card 5 -->
+                <div class="bg-white rounded-lg shadow-md p-6 card-hover border-t-4 border-deep-blue">
+                    <div class="text-vibrant-red text-4xl mb-4">
+                        <i class="fas fa-hand-sparkles"></i>
+                    </div>
+                    <h3 class="font-bold text-xl text-deep-blue mb-3">Hand Washing</h3>
+                    <p class="text-gray-600">Gentle hand washing with premium products for a scratch-free clean.</p>
+                </div>
+
+                <!-- Service Card 6 -->
+                <div class="bg-white rounded-lg shadow-md p-6 card-hover border-t-4 border-deep-blue">
+                    <div class="text-vibrant-red text-4xl mb-4">
+                        <i class="fas fa-compact-disc"></i>
+                    </div>
+                    <h3 class="font-bold text-xl text-deep-blue mb-3">Wheel & Rim Detailing</h3>
+                    <p class="text-gray-600">Specialized cleaning and protection for wheels, rims, and tire shine.</p>
+                </div>
+
+                <!-- Service Card 7 -->
+                <div class="bg-white rounded-lg shadow-md p-6 card-hover border-t-4 border-deep-blue">
+                    <div class="text-vibrant-red text-4xl mb-4">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3 class="font-bold text-xl text-deep-blue mb-3">Paint Protection</h3>
+                    <p class="text-gray-600">Ceramic coating and sealant application for long-lasting exterior protection.</p>
+                </div>
+
+                <!-- Service Card 8 -->
+                <div class="bg-white rounded-lg shadow-md p-6 card-hover border-t-4 border-deep-blue">
+                    <div class="text-vibrant-red text-4xl mb-4">
+                        <i class="fas fa-bug"></i>
+                    </div>
+                    <h3 class="font-bold text-xl text-deep-blue mb-3">Bug & Sap Removal</h3>
+                    <p class="text-gray-600">Expert removal of stubborn bugs, tree sap, and road tar from your vehicle.</p>
+                </div>
+
+                <!-- Service Card 9 -->
+                <div class="bg-white rounded-lg shadow-md p-6 card-hover border-t-4 border-deep-blue">
+                    <div class="text-vibrant-red text-4xl mb-4">
+                        <i class="fas fa-tint"></i>
+                    </div>
+                    <h3 class="font-bold text-xl text-deep-blue mb-3">Car Wash</h3>
+                    <p class="text-gray-600">Professional car wash services including touchless wash options.</p>
+                </div>
+
+                <!-- Service Card 10 -->
+                <div class="bg-white rounded-lg shadow-md p-6 card-hover border-t-4 border-deep-blue">
+                    <div class="text-vibrant-red text-4xl mb-4">
+                        <i class="fas fa-lightbulb"></i>
+                    </div>
+                    <h3 class="font-bold text-xl text-deep-blue mb-3">Headlight Restoration</h3>
+                    <p class="text-gray-600">Restore clarity to foggy, yellowed headlights for improved visibility and safety.</p>
+                </div>
+
+                <!-- Service Card 11 -->
+                <div class="bg-white rounded-lg shadow-md p-6 card-hover border-t-4 border-deep-blue">
+                    <div class="text-vibrant-red text-4xl mb-4">
+                        <i class="fas fa-umbrella"></i>
+                    </div>
+                    <h3 class="font-bold text-xl text-deep-blue mb-3">Protection Services</h3>
+                    <p class="text-gray-600">Comprehensive protection packages including wax, sealant, and ceramic coatings.</p>
+                </div>
+
+                <!-- Service Card 12 -->
+                <div class="bg-white rounded-lg shadow-md p-6 card-hover border-t-4 border-deep-blue">
+                    <div class="text-vibrant-red text-4xl mb-4">
+                        <i class="fas fa-water"></i>
+                    </div>
+                    <h3 class="font-bold text-xl text-deep-blue mb-3">Touchless Wash</h3>
+                    <p class="text-gray-600">Advanced touchless washing technology for a safe, effective clean.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us Section -->
+    <section id="why-choose-us" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="max-w-4xl mx-auto">
+                <h2 class="text-3xl md:text-4xl font-bold text-deep-blue mb-8 text-center">Why Choose P&M Car & Detail Supplie?</h2>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <!-- Reason 1 -->
+                    <div class="flex items-start space-x-4">
+                        <div class="text-vibrant-red text-2xl flex-shrink-0">
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-lg text-deep-blue mb-2">Expert Technicians</h3>
+                            <p class="text-gray-600">Our trained detailing professionals have years of experience working with all vehicle types and finishes.</p>
+                        </div>
+                    </div>
+
+                    <!-- Reason 2 -->
+                    <div class="flex items-start space-x-4">
+                        <div class="text-vibrant-red text-2xl flex-shrink-0">
+                            <i class="fas fa-spray-can"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-lg text-deep-blue mb-2">Premium Products</h3>
+                            <p class="text-gray-600">We use only professional-grade detailing products and supplies for superior results.</p>
+                        </div>
+                    </div>
+
+                    <!-- Reason 3 -->
+                    <div class="flex items-start space-x-4">
+                        <div class="text-vibrant-red text-2xl flex-shrink-0">
+                            <i class="fas fa-eye"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-lg text-deep-blue mb-2">Attention to Detail</h3>
+                            <p class="text-gray-600">We meticulously clean every nook and cranny, ensuring no spot is missed.</p>
+                        </div>
+                    </div>
+
+                    <!-- Reason 4 -->
+                    <div class="flex items-start space-x-4">
+                        <div class="text-vibrant-red text-2xl flex-shrink-0">
+                            <i class="fas fa-award"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-lg text-deep-blue mb-2">Proven Results</h3>
+                            <p class="text-gray-600">Years of satisfied customers and vehicles restored to showroom condition.</p>
+                        </div>
+                    </div>
+
+                    <!-- Reason 5 -->
+                    <div class="flex items-start space-x-4">
+                        <div class="text-vibrant-red text-2xl flex-shrink-0">
+                            <i class="fas fa-dollar-sign"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-lg text-deep-blue mb-2">Competitive Pricing</h3>
+                            <p class="text-gray-600">Fair, transparent pricing with packages to fit every budget and need.</p>
+                        </div>
+                    </div>
+
+                    <!-- Reason 6 -->
+                    <div class="flex items-start space-x-4">
+                        <div class="text-vibrant-red text-2xl flex-shrink-0">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-lg text-deep-blue mb-2">Local & Trusted</h3>
+                            <p class="text-gray-600">Proudly serving the Ridgecrest community with reliable, professional service.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-deep-blue mb-3">What Our Customers Say</h2>
+                <p class="text-gray-600 text-lg">Don't just take our word for it</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto">
+                <!-- Testimonial 1 -->
+                <div class="bg-white rounded-lg shadow-md p-6 card-hover">
+                    <div class="star-rating text-xl mb-3">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="text-gray-700 mb-4 italic">"They have great customer service. My car is beautiful. They even offered to shampoo my carpet for free to bring it by anytime and they will take care of it. They offer a good price. I would recommend them to anybody especially my friends and family. I give them a strong strong 10 thank you for your service!"</p>
+                    <div class="flex items-center space-x-3">
+                        <div class="bg-deep-blue text-white w-10 h-10 rounded-full flex items-center justify-center font-bold">
+                            SM
+                        </div>
+                        <div>
+                            <p class="font-bold text-deep-blue">Shelly Morrison</p>
+                            <p class="text-sm text-gray-500">2 months ago</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 2 -->
+                <div class="bg-white rounded-lg shadow-md p-6 card-hover">
+                    <div class="star-rating text-xl mb-3">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="text-gray-700 mb-4 italic">"Absolutely amazing!!! My car was is bad shape and pretty disgusting! Thank you guys for your hard work. My car looks amazing and smells amazing. I haven't seen my seats and car this clean in quite awhile. Will be recommending you to all my friends and family!!!"</p>
+                    <div class="flex items-center space-x-3">
+                        <div class="bg-deep-blue text-white w-10 h-10 rounded-full flex items-center justify-center font-bold">
+                            BF
+                        </div>
+                        <div>
+                            <p class="font-bold text-deep-blue">Brigite Fisk</p>
+                            <p class="text-sm text-gray-500">3 years ago</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 3 -->
+                <div class="bg-white rounded-lg shadow-md p-6 card-hover">
+                    <div class="star-rating text-xl mb-3">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="text-gray-700 mb-4 italic">"This crew exceeded my expectations and an excellent job on my window tinting. They had to remove the old tint and install new tent. Highly recommended."</p>
+                    <div class="flex items-center space-x-3">
+                        <div class="bg-deep-blue text-white w-10 h-10 rounded-full flex items-center justify-center font-bold">
+                            BH
+                        </div>
+                        <div>
+                            <p class="font-bold text-deep-blue">Billy Hinzo</p>
+                            <p class="text-sm text-gray-500">3 years ago</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Location Section -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="max-w-3xl mx-auto text-center">
+                <h2 class="text-3xl md:text-4xl font-bold text-deep-blue mb-6">Visit Us in Ridgecrest</h2>
+                <div class="text-lg text-gray-700 leading-relaxed space-y-3">
+                    <p class="flex items-center justify-center space-x-2">
+                        <i class="fas fa-map-marker-alt text-vibrant-red"></i>
+                        <span class="font-semibold">109 N Alvord St, Ridgecrest, CA 93555</span>
+                    </p>
+                    <p class="flex items-center justify-center space-x-2">
+                        <i class="fas fa-phone-alt text-vibrant-red"></i>
+                        <span class="font-semibold">(760) 977-0020</span>
+                    </p>
+                    <p class="mt-4">Proudly serving Ridgecrest and surrounding areas with professional auto detailing services.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA Section -->
+    <section id="contact" class="bg-deep-blue text-white py-16">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold mb-4">Ready to Restore Your Vehicle's Shine?</h2>
+            <p class="text-xl mb-8 text-gray-200 max-w-2xl mx-auto">Call now to schedule your detailing appointment</p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                <a href="tel:7609770020"
+                   class="bg-vibrant-red text-white px-10 py-5 rounded-lg font-bold text-xl hover:bg-vibrant-red-dark transition-all shadow-lg w-full sm:w-auto flex items-center justify-center space-x-3 pulse-ring">
+                    <i class="fas fa-phone-alt text-2xl"></i>
+                    <span>(760) 977-0020</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark-navy text-white py-8">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-6">
+                <!-- Company Info -->
+                <div>
+                    <div class="flex items-center space-x-2 mb-3">
+                        <i class="fas fa-car text-vibrant-red text-2xl"></i>
+                        <span class="font-bold text-xl">P&M Car & Detail Supplie</span>
+                    </div>
+                    <p class="text-gray-400">Professional auto detailing and car care services in Ridgecrest, California.</p>
+                </div>
+
+                <!-- Contact Info -->
+                <div>
+                    <h3 class="font-bold text-lg mb-3 text-vibrant-red">Contact Us</h3>
+                    <div class="space-y-2 text-gray-400">
+                        <p><i class="fas fa-phone-alt mr-2 text-vibrant-red"></i> (760) 977-0020</p>
+                        <p><i class="fas fa-map-marker-alt mr-2 text-vibrant-red"></i> 109 N Alvord St, Ridgecrest, CA 93555</p>
+                        <p><i class="fas fa-clock mr-2 text-vibrant-red"></i> Professional Service Available</p>
+                    </div>
+                </div>
+
+                <!-- Services -->
+                <div>
+                    <h3 class="font-bold text-lg mb-3 text-vibrant-red">Our Services</h3>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><i class="fas fa-check mr-2 text-vibrant-red"></i> Auto Detailing</li>
+                        <li><i class="fas fa-check mr-2 text-vibrant-red"></i> Paint Restoration</li>
+                        <li><i class="fas fa-check mr-2 text-vibrant-red"></i> Interior Detailing</li>
+                        <li><i class="fas fa-check mr-2 text-vibrant-red"></i> Headlight Restoration</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-700 pt-6 text-center text-gray-400">
+                <p>&copy; 2024 P&M Car & Detail Supplie. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
